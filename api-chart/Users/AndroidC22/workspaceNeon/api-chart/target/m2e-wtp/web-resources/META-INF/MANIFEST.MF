@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: api-chart
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: AndroidC22
+Implementation-Vendor-Id: br.spring.charjs
+Build-Jdk: 1.8.0_171
+Implementation-URL: http://projects.spring.io/spring-boot/api-chart/
+Created-By: Maven Integration for Eclipse
+Implementation-Vendor: Pivotal Software, Inc.
+
