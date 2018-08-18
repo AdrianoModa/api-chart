@@ -1,8 +1,11 @@
+import { AlunoService } from './shared/services/aluno.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { AlunoComponent } from './aluno/aluno.component';
+import { DisciplinaService } from './shared/services/disciplina.service';
+import { HttpModule } from '@angular/http';
 
 @NgModule({
   declarations: [
@@ -10,9 +13,10 @@ import { AlunoComponent } from './aluno/aluno.component';
     AlunoComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpModule
   ],
-  providers: [],
+  providers: [AlunoService, DisciplinaService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
