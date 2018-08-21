@@ -4,5 +4,5 @@ export class Aluno {
 
     id: number
     nome: string
-    disciplina: Disciplina = new Disciplina()
+    disciplinas: Disciplina = new Disciplina()
 }

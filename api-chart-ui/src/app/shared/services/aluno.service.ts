@@ -11,9 +11,9 @@ export class AlunoService {
   alunoUrl = 'http://localhost:8080/aluno'
 
   listar(): Promise<any> {
-    return this.httpClient.get(this.alunoUrl)
-      .toPromise()
-      .then(response => response.json())
+    return this.httpClient.get(this.alunoUrl)  
+      .toPromise()   
+      .then(result => result.json())
   }
 
 }

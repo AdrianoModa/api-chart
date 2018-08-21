@@ -3,9 +3,12 @@ package br.spring.chartjs.model;
 import java.io.Serializable;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Disciplina implements Serializable {
@@ -17,12 +20,14 @@ public class Disciplina implements Serializable {
 	private Long id;
 	private String nomeDisciplina;
 	private Float nota;
+	@ManyToOne	
+	private Aluno aluno;
 	
 	public Disciplina() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-
+	
 	public Disciplina(Long id, String nomeDisciplina, Float nota) {
 		super();
 		this.id = id;
@@ -30,8 +35,14 @@ public class Disciplina implements Serializable {
 		this.nota = nota;
 	}
 
-
-
+	public Disciplina(Long id, String nomeDisciplina, Float nota, Aluno aluno) {
+		super();
+		this.id = id;
+		this.nomeDisciplina = nomeDisciplina;
+		this.nota = nota;
+		this.aluno = aluno;
+	}
+	
 	public Long getId() {
 		return id;
 	}
@@ -54,6 +65,14 @@ public class Disciplina implements Serializable {
 
 	public void setNota(Float nota) {
 		this.nota = nota;
+	}
+	
+	public Aluno getAluno() {
+		return aluno;
+	}
+
+	public void setAluno(Aluno aluno) {
+		this.aluno = aluno;
 	}
 	
 	@Override
@@ -83,6 +102,7 @@ public class Disciplina implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Disciplina [id=" + id + ", nomeDisciplina=" + nomeDisciplina + ", nota=" + nota + "]";
-	}
+		return "Disciplina [id=" + id + ", nomeDisciplina=" + nomeDisciplina + ", nota=" + nota + ", aluno=" + aluno
+				+ "]";
+	}	
 }
